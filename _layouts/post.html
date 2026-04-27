@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="article">
+  <h1>{{ page.title }}</h1>
+  <div class="article-date">{{ page.date | date: "%Y.%m.%d" }}</div>
+
+  {% if page.description %}
+    <div class="article-summary">{{ page.description }}</div>
+  {% endif %}
+
+  <div class="article-content">
+    {{ content }}
+  </div>
+</article>

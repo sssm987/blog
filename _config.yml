@@ -18,14 +18,33 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: mhlog
+title: Backend Lab
 email: ""
-description: >- # this means to ignore newlines until "baseurl:"
-  개발하면서 정리한 내용들을 기록하는 블로그
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+description: >-
+  문제를 먼저 만들고, 기술로 해결하는 과정을 기록하는 백엔드 블로그
+baseurl: ""
+url: "https://mhlog.kr"
 twitter_username: ""
-github_username:  sssm987
+github_username: sssm987
+intro_lines:
+  - 문제를 먼저 만들고,
+  - 기술로 해결합니다.
+tech_stack: Spring / PostgreSQL / Redis / k6 / Grafana
+navigation:
+  - title: About
+    url: /about/
+  - title: Posts
+    url: /posts/
+  - title: Spring
+    url: /categories/spring/
+  - title: Database
+    url: /categories/database/
+  - title: Redis
+    url: /categories/redis/
+  - title: Infra
+    url: /categories/infra/
+  - title: GitHub
+    url: /categories/github/
 
 # Build settings
 theme: minima
@@ -34,6 +53,13 @@ plugins:
 
 lang: ko-KR
 timezone: Asia/Seoul
+permalink: /posts/:title/
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
 
 # Exclude from processing.
 # The following items will not be processed, by default.

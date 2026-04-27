@@ -4,15 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+백엔드에서 생기는 문제를 직접 재현해보고, 그걸 해결하는 과정을 정리하는 블로그입니다.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+- 동시성 문제 재현
+- Redis 캐시 적용 전후 비교
+- DB 락과 성능 차이 확인
+- k6, Grafana로 병목 지점 확인
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+조금 더 느리더라도 원인과 결과가 보이는 실험을 남기려고 합니다.

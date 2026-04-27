@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<div class="intro">
+  {% for line in site.intro_lines %}
+    {{ line }}{% unless forloop.last %}<br />{% endunless %}
+  {% endfor %}
+  <br /><br />
+  <strong>{{ site.tech_stack }}</strong>
+</div>
+
+<div class="section-title">Latest Posts</div>
+
+{% assign latest_posts = site.posts | slice: 0, 5 %}
+{% for post in latest_posts %}
+  <article class="post-card">
+    <div class="post-date">{{ post.date | date: "%Y.%m.%d" }}</div>
+    <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {% if post.description %}
+      <div class="post-desc">{{ post.description }}</div>
+    {% elsif post.excerpt %}
+      <div class="post-desc">{{ post.excerpt | strip_html | truncate: 110 }}</div>
+    {% endif %}
+    {% if post.categories and post.categories.size > 0 %}
+      <div class="tags">{{ post.categories | join: " / " }}</div>
+    {% endif %}
+  </article>
+{% endfor %}
