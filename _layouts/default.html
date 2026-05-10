@@ -8,6 +8,15 @@
     </title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}" />
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    {% if site.google_analytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "{{ site.google_analytics }}");
+      </script>
+    {% endif %}
     {%- feed_meta -%}
   </head>
   <body>
