@@ -154,6 +154,13 @@ a {
   margin: 18px 0;
 }
 
+.article-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 24px 0;
+}
+
 .article-content table {
   width: 100%;
   border-collapse: collapse;
