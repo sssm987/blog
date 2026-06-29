@@ -90,7 +90,7 @@ VUS=100 ITERATIONS=1 BASE_URL=http://192.168.219.103:8080 PRODUCT_ID=1 k6 run k6
 
 k6의 결과값을 보면 100명의 사용자가 각각 1번씩 주문 요청을 보냈고, 총 100건의 요청이 모두 정상적으로 처리되었음을 보여준다.     평균 응답시간은 약 84ms였고, p95는 약 142ms였다. 다만 동시성 테스트의 핵심은 응답시간 자체보다도, 성공 요청 수와 실제 주문 건수 및 남은 재고가 일치하는지 확인하는 데 있다.  
 
-<img src="{{ '/assets/images/concurrency/success_1_k6.png' | relative_url }}" alt="success_1" />
+<img src="{{ '/assets/images/concurrency/0427/success_1_k6.png' | relative_url }}" alt="success_1" />
 
 스웨거로 상품을 조회한 결과값이다.   
 
@@ -103,17 +103,17 @@ initiativeStock : 초기 재고
 원인은 상품을 조회한 순간 여러 사용자의 요청이 동시에 같은 재고값을 가져왔고 재고 차감을 같은 재고값에서 차감을 하였기 때문에 발생한 일이다.      
 K6의 응답값만 본다면 성공으로 생각들지만 실제로 DB에는 정합성 문제가 일어났고 이런 정합성 문제는 장애나 에러로 도출되지 않기때문에 더욱 심각한 문제가 된다.
 
-<img src="{{ '/assets/images/concurrency/success_1_swagger.png' | relative_url }}" alt="success_1_swagger" />   
+<img src="{{ '/assets/images/concurrency/0427/success_1_swagger.png' | relative_url }}" alt="success_1_swagger" />   
 
 ex)
 현재 문제를 쉬운 예시를 들자면 3명의 사용자가 동시에 재고를 조회했을때 100개의 재고를 조회했고 다음 차감한후 update시 3명 모두 동일한 99를 update가 하여 LostUpdate가 일어난것이다.   
 
-<img src="{{ '/assets/images/concurrency/ex_select.png' | relative_url }}" alt="ex_select" />   
-<img src="{{ '/assets/images/concurrency/ex_update.png' | relative_url }}" alt="ex_update" />
+<img src="{{ '/assets/images/concurrency/0427/ex_select.png' | relative_url }}" alt="ex_select" />   
+<img src="{{ '/assets/images/concurrency/0427/ex_update.png' | relative_url }}" alt="ex_update" />
 
 서버 및 DB모니터링의 경우 아래와 같이 급격하게 생성된 쓰레드 풀을 제외하고는 큰 문제는 없었다.   
 
-<img src="{{ '/assets/images/concurrency/success_1_grafana.png' | relative_url }}" alt="success_1_grafana" />
+<img src="{{ '/assets/images/concurrency/0427/success_1_grafana.png' | relative_url }}" alt="success_1_grafana" />
 
 요청 갯수 1개의 경우 이러한 현상이 일어나지 않았지만 조금만 요청의 갯수가 많아질 경우 재고와 주문의 정합성은 맞지않았다.        
 
