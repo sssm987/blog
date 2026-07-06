@@ -148,6 +148,16 @@ a {
   letter-spacing: -0.02em;
 }
 
+.article-content a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.article-content a:hover {
+    color: #1d4ed8;
+}
+
 .article-content p,
 .article-content ul,
 .article-content ol {
