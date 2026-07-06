@@ -12,7 +12,7 @@ description : Concurrency의 문제를 해결해보자
 이번글에서는 이 동시성 문제를 해결을 해보고 서버와, DB의 성능 측정을 해볼것이다.    
 동시성 문제는 해결 방법이 여러가지 있지만 하나씩 사용해보고 측정해보며 어떤 장점과 단점이있는지 알아볼것이며 이번 글에서는 Synchronized를 사용하여 해결해 볼 것 이다.       
 
-이번 실험에 사용한 전체 코드는 [GitHub 저장소](https://github.com/sssm987/basic/tree/synchronized) 에 정리해두었다.
+실험에서 사용한 전체 코드는 [여기에서 확인할 수 있다](https://github.com/sssm987/basic/tree/synchronized)
 
 ## 실험 환경
 

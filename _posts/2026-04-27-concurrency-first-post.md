@@ -13,7 +13,7 @@ description: Concurrency가 일어나는 상황을 재현해보고 어떤 현상
 이번글에서는 실험을 통해 문제를 발생시키고 측정할것이며 다음 글에 해결 방법과 성능 비교 식으로 진행 할 것이다.
 
 
-이번 실험에 사용한 전체 코드는 [GitHub 저장소](https://github.com/sssm987/basic) 에 정리해두었다.
+실험에서 사용한 전체 코드는 [여기에서 확인할 수 있다](https://github.com/sssm987/basic)
 
 ## 실험 환경
 
