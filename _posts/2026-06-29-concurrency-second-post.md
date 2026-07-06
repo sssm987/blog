@@ -12,8 +12,7 @@ description : Concurrency의 문제를 해결해보자
 이번글에서는 이 동시성 문제를 해결을 해보고 서버와, DB의 성능 측정을 해볼것이다.    
 동시성 문제는 해결 방법이 여러가지 있지만 하나씩 사용해보고 측정해보며 어떤 장점과 단점이있는지 알아볼것이며 이번 글에서는 Synchronized를 사용하여 해결해 볼 것 이다.       
 
-실험에서 사용한 전체 코드는 [여기에서 확인할 수 있다](https://github.com/sssm987/basic/tree/synchronized)
-
+실험에서 사용한 전체 코드는 <a href="https://github.com/sssm987/basic/tree/synchronized" target="_blank" rel="noopener noreferrer">[여기에서 확인할 수 있다]</a>
 ## 실험 환경
 
 실험 환경은 Spring boot,Grafana,Prometheus,k6,PostgreSQL이며 k6를 제외한 나머지를 로컬 미니 PC에 구축하고
