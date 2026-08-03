@@ -73,7 +73,7 @@ k6의 결과를 보면 낙관적 락과 다르게 실패한 결과가 없고 모
 k6를 보면 20건 실패로 정확히 나왔으며
 <img src="{{ '/assets/images/concurrency/0803/success_2_k6.png' | relative_url }}" alt="success_2_k6" />
 
-재고의 경우 정확이 100개만 줄어들었다.
+재고의 경우 정확히 100개만 줄어들었다.
 <img src="{{ '/assets/images/concurrency/0803/success_2_swagger.png' | relative_url }}" alt="success_2_swagger" />
 
 이번 실험을 통해 비관적 락 역시 재고 정합성을 지키는 데 효과적이라는 것을 확인할 수 있었다.
