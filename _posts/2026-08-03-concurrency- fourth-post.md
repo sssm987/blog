@@ -67,7 +67,7 @@ k6의 결과를 보면 낙관적 락과 다르게 실패한 결과가 없고 모
 <img src="{{ '/assets/images/concurrency/0803/success_1_grafana.png' | relative_url }}" alt="success_1_grafana" />
 
 중요한 재고는 다음과 같이 100개의 건수가 딱 맞게 줄어들었다.
-<img src="{{ '/assets/images/concurrency/0706/success_1_swagger.png' | relative_url }}" alt="success_1_swagger" />
+<img src="{{ '/assets/images/concurrency/0803/success_1_swagger.png' | relative_url }}" alt="success_1_swagger" />
 
 더 많은 요청을 보내도 재고가 음수가 되는지 test를 하기위해 재고를 초기화 후 요청 건 수를 120건으로 늘려 다시 요청을 보내봤다.   
 k6를 보면 20건 실패로 정확히 나왔으며
