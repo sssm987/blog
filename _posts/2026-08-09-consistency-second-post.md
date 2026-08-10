@@ -33,10 +33,10 @@ DB테이블은 최대한 간단하게 구성하였으며 실제 주문, 결제 D
 <a href="https://github.com/sssm987/pg" target="_blank" rel="noopener noreferrer">[여기에서 확인할 수 있다(결제 서버)]</a>
 
 ## 설명
-기존 시스템은 usecase계층에 트랜잭션을 걸었지만 이번에는 usecase계층에 트랜잭션을 제거 하고 따로 트랜잭션 서비스를 만들어 트랜잭션 서비스에서 조립하는 형태로 바꿨다.
+기존 시스템은 usecase계층에 트랜잭션을 걸었지만 이번에는 usecase계층에 트랜잭션을 제거 하고 따로 트랜잭션 서비스를 만들어 트랜잭션 서비스에서 조립하는 형태로 바꿨다.    
 비지니스 로직은 아래와 같이 변경되었으며 구간별 try catch로 감싸 익셥션 발생될때 보상 프로세스를 호출하도록 만들었다.   
 실제로는 저렇게 익셉션을 전부다 잡으면 안되고 설계자의 의도에 맞는 익셉션만 잡아야하며 예외처리를 의미에 맞게 넣어야한다.   
-하지만 정합성을 잡는 토이프로젝트이기 때문에 전체로 잡고 진행하였다.
+하지만 정합성을 잡는 토이프로젝트이기 때문에 전체로 잡고 진행하였다.   
 ```java
     public void createOrder(OrderCreateRequestDTO dto) {
     log.info("주문 생성 시작. memberId={}, productId={}",dto.memberId(),dto.productId());
@@ -84,7 +84,7 @@ PG쪽도 마찬가지로 주문 실패시 결제 취소를 호출하여 다른 �
 
 ## 실험
 첫번째 실험은 모두가 정상일때 실헝을 하였다.   
-간단하게 주문 생성 스웨거를 통해 주문 1건을 생성하고 PG서버에 값이 잘 오는지 데이터가 잘 쌓이는지를 실험하겠다.  
+간단하게 주문 생성 스웨거를 통해 주문 1건을 생성하고 PG서버에 값이 잘 오는지 데이터가 잘 쌓이는지를 실험하겠다.   
 결과는 모두 문제없이 데이터가 쌓여고 각 서버간의 정합성도 모두 맞는다.   
 <img src="{{ '/assets/images/concurrency/0809/configuration_swagger_test.png' | relative_url }}" alt="configuration_swagger_test" />
 <img src="{{ '/assets/images/concurrency/0809/configuration_order_test.png' | relative_url }}" alt="configuration_order_test" />
@@ -92,7 +92,7 @@ PG쪽도 마찬가지로 주문 실패시 결제 취소를 호출하여 다른 �
 <img src="{{ '/assets/images/concurrency/0809/configuration_db_test.png' | relative_url }}" alt="configuration_db_test" />
 <img src="{{ '/assets/images/concurrency/0809/configuration_inventory_db_test.png' | relative_url }}" alt="configuration_inventory_db_test" />
 
-두번째 실험은 API호출시 실패하는 상황을 실험하였다.
+두번째 실험은 API호출시 실패하는 상황을 실험하였다.    
 pg서버를 끄고 주문생성을 호출한 결과 주문생성이 실패하였다.   
 그리고 DB를 조회해보니 시스템 취소 상태로 주문생성이 되어있고, 재고도 다시 원상복구되어있고, 결제는 실패 상태로 잘되어있다.    
 실험결과 API 실패시 정합성은 문제가 없었다. 
@@ -102,7 +102,7 @@ pg서버를 끄고 주문생성을 호출한 결과 주문생성이 실패하였
 <img src="{{ '/assets/images/concurrency/0809/configuration_order_test2.png' | relative_url }}" alt="configuration_order_test2" />
 <img src="{{ '/assets/images/concurrency/0809/configuration_payment_db_test2.png' | relative_url }}" alt="configuration_payment_db_test2" />
 
-세번째 실험은 API호출이 성공적으로 되었지만 완료상태를 저장하는 단계에서 실패 상황을 실험하였다.
+세번째 실험은 API호출이 성공적으로 되었지만 완료상태를 저장하는 단계에서 실패 상황을 실험하였다.    
 DB저장 부분이 실행될때 의도적으로 익셉션을 발생시켰고 실험결과는 시스템 취소 상태로 주문생성이 되었고, 재고도 다시 원상복구되어있고, 결제는 취소상태로 잘되어있다.   
 그리고 PG서버에도 취소 요청이 성공적으로 들어왔다.   
 <img src="{{ '/assets/images/concurrency/0809/configuration_swagger_test3.png' | relative_url }}" alt="configuration_swagger_test3" />
