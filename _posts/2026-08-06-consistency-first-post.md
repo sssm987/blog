@@ -23,7 +23,7 @@ description : Consistency에 대해 알아보자
 ## 시스템 구성
 이번 시리즈에서는 간단하게 주문, 결제 도메인을 이용할것이다.    
 주문, 결제 도메인은 엄청 복잡한 도메인이다 그렇기에 실무에서는 많은 예외 상황 처리와 많은 검증, 많은 테이블, 컬럼이 필요하지만 이번 시리즈에서는 정합성을 위해 최대한 간단하게 필요한 부분만 구현 할 것 이다.    
-(valdaytion check, Exption 이런것들은 넘어갈것이다) .   
+(Validation check, Exception 이런것들은 넘어갈것이다) .   
 
 시스템 구성은 주문서버와 결제서버와 API통신을 하는 방식으로 했고 결제서버는 Mock서버로 응답값만 넘어오도록 구성했다.    
 DB는 주문서버에만 연동하였다.
@@ -80,10 +80,10 @@ public void createOrder(OrderCreateRequestDTO dto) {
 간단하게 주문 생성 스웨거를 통해 주문 1건을 생성하고 PG서버에 값이 잘 오는지 데이터가 잘 쌓이는지를 보겠다.  
 우선 생성은 문제없이 잘 되었다.    
 
-<img src="{{ '/assets/images/concurrency/0806/configuration_swagger_test.png' | relative_url }}" alt="configuration_swagger_test" />
-<img src="{{ '/assets/images/concurrency/0806/configuration_order_test.png' | relative_url }}" alt="configuration_order_test" />
-<img src="{{ '/assets/images/concurrency/0806/configuration_pg_test.png' | relative_url }}" alt="configuration_pg_test" />
-<img src="{{ '/assets/images/concurrency/0806/configuration_db_test.png' | relative_url }}" alt="configuration_db_test" />
+
+
+
+
 
 
 두번째 실험은 API호출 후 의도적으로 익셉션을 발생시켰다.   
