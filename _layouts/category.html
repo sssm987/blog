@@ -8,20 +8,30 @@ layout: default
     <div class="article-content">
         {{ content }}
     </div>
-
-    <div class="post-list">
-        {% assign filtered_posts = site.posts | where_exp: "post", "post.categories contains page.category" %}
-
-        {% for post in filtered_posts %}
-        <div class="post-item">
-            <h2>
-                <a href="{{ post.url | relative_url }}">
-                    {{ post.title }}
-                </a>
-            </h2>
-
-            <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        </div>
-        {% endfor %}
-    </div>
 </article>
+
+{% assign filtered_posts = site.posts | where_exp: "post", "post.categories contains page.category" %}
+
+{% for post in filtered_posts %}
+<article class="post-card">
+    <div class="post-date">{{ post.date | date: "%Y.%m.%d" }}</div>
+
+    <a class="post-title" href="{{ post.url | relative_url }}">
+        {{ post.title }}
+    </a>
+
+    {% if post.description %}
+    <div class="post-desc">{{ post.description }}</div>
+    {% elsif post.excerpt %}
+    <div class="post-desc">
+        {{ post.excerpt | strip_html | truncate: 110 }}
+    </div>
+    {% endif %}
+
+    {% if post.categories and post.categories.size > 0 %}
+    <div class="tags">
+        {{ post.categories | join: " / " }}
+    </div>
+    {% endif %}
+</article>
+{% endfor %}
