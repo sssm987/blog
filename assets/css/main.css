@@ -245,4 +245,69 @@ pre code {
   .article {
     margin-top: 56px;
   }
+  .series-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    margin-top: 80px;
+    padding-top: 24px;
+
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .series-prev,
+  .series-next {
+    width: 50%;
+  }
+
+  .series-next {
+    text-align: right;
+  }
+
+  /* 이전 글 / 다음 글 표시 */
+  .series-navigation span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    color: #999;
+  }
+
+    /* 글 제목 */
+  .series-navigation a {
+    display: inline-block;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* 마우스 올렸을 때 */
+  .series-navigation a:hover {
+    text-decoration: underline;
+  }
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    .series-navigation {
+        flex-direction: column;
+        gap: 24px;
+
+        margin-top: 60px;
+    }
+
+    .series-prev,
+    .series-next {
+        width: 100%;
+    }
+
+    .series-next {
+        text-align: left;
+    }
+  }
 }
