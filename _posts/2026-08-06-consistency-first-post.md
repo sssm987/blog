@@ -5,6 +5,8 @@ date: 2026-08-06 23:00:00 +0900
 categories :
   - architecture
 description : Consistency에 대해 알아보자
+series: consistency
+series_order: 2
 ---
 
 ## 개요

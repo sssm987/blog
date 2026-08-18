@@ -4,7 +4,9 @@ title: "[Concurrency] 재고 차감에서 동시성 문제가 발생하는 이�
 date: 2026-04-27 21:10:00 +0900
 categories: 
   - architecture
-description: Concurrency가 일어나는 상황을 재현해보고 어떤 현상이 일어나는지 알아보자 
+description: Concurrency가 일어나는 상황을 재현해보고 어떤 현상이 일어나는지 알아보자
+series: concurrency
+series_order: 1
 ---
 
 ## 개요

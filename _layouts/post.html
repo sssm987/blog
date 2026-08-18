@@ -1,15 +1,65 @@
 ---
 layout: default
 ---
+
 <article class="article">
-  <h1>{{ page.title }}</h1>
-  <div class="article-date">{{ page.date | date: "%Y.%m.%d" }}</div>
+    <h1>{{ page.title }}</h1>
+    <div class="article-date">{{ page.date | date: "%Y.%m.%d" }}</div>
 
-  {% if page.description %}
+    {% if page.description %}
     <div class="article-summary">{{ page.description }}</div>
-  {% endif %}
+    {% endif %}
 
-  <div class="article-content">
-    {{ content }}
-  </div>
+    <div class="article-content">
+        {{ content }}
+    </div>
+    {% if page.series %}
+
+    {% assign series_posts = site.posts
+    | where: "series", page.series
+    | sort: "series_order"
+    %}
+
+    {% assign prev_order = page.series_order | minus: 1 %}
+    {% assign next_order = page.series_order | plus: 1 %}
+
+    {% assign previous_series_post = nil %}
+    {% assign next_series_post = nil %}
+
+    {% for post in series_posts %}
+
+    {% if post.series_order == prev_order %}
+    {% assign previous_series_post = post %}
+    {% endif %}
+
+    {% if post.series_order == next_order %}
+    {% assign next_series_post = post %}
+    {% endif %}
+
+    {% endfor %}
+
+    <div class="series-navigation">
+
+        <div class="series-prev">
+            {% if previous_series_post %}
+            <span>← 이전 글</span>
+            <a href="{{ previous_series_post.url | relative_url }}">
+                {{ previous_series_post.title }}
+            </a>
+            {% endif %}
+        </div>
+
+        <div class="series-next">
+            {% if next_series_post %}
+            <span>다음 글 →</span>
+            <a href="{{ next_series_post.url | relative_url }}">
+                {{ next_series_post.title }}
+            </a>
+            {% endif %}
+        </div>
+
+    </div>
+
+    {% endif %}
+
 </article>

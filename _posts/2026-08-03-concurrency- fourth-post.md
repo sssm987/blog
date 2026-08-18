@@ -5,6 +5,8 @@ date: 2026-08-03 21:00:00 +0900
 categories :
   - architecture
 description : Concurrency의 문제를 해결해보자
+series: concurrency
+series_order: 4
 ---
 
 ## 개요
