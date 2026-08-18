@@ -6,7 +6,7 @@ categories :
   - architecture
 description : Consistency에 대해 알아보자
 series: consistency
-series_order: 1
+series_order: 2
 ---
 
 ## 개요
