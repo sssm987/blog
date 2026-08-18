@@ -42,7 +42,7 @@ layout: default
 
         <div class="series-prev">
             {% if previous_series_post %}
-            <span>← 이전 글</span>
+            <span>이전 글 : </span>
             <a href="{{ previous_series_post.url | relative_url }}">
                 {{ previous_series_post.title }}
             </a>
@@ -51,7 +51,7 @@ layout: default
 
         <div class="series-next">
             {% if next_series_post %}
-            <span>다음 글 →</span>
+            <span>다음 글 : </span>
             <a href="{{ next_series_post.url | relative_url }}">
                 {{ next_series_post.title }}
             </a>
