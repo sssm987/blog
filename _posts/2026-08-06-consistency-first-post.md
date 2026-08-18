@@ -2,7 +2,8 @@
 layout: post
 title: "[Consistency] DB 트랜잭션만으로 정합성을 보장할 수 있을까?"
 date: 2026-08-06 23:00:00 +0900
-categories : [Consistency]
+categories :
+  - architecture
 description : Consistency에 대해 알아보자
 ---
 

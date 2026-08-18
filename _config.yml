@@ -36,16 +36,14 @@ navigation:
     url: /about/
   - title: Posts
     url: /posts/
-  - title: Spring
-    url: /categories/spring/
+  - title: Architecture
+    url: /categories/architecture/
   - title: Database
     url: /categories/database/
-  - title: Redis
-    url: /categories/redis/
-  - title: Infra
-    url: /categories/infra/
-  - title: GitHub
-    url: /categories/github/
+  - title: Network
+    url: /categories/network/
+  - title: Backend
+    url: /categories/backend/
 
 # Build settings
 theme: minima

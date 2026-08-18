@@ -2,7 +2,8 @@
 layout: post
 title: "[Concurrency] 재고 차감에서 동시성 문제를 해결하는 방법 3"
 date: 2026-08-03 21:00:00 +0900
-categories : [Concurrency]
+categories :
+  - architecture
 description : Concurrency의 문제를 해결해보자
 ---
 

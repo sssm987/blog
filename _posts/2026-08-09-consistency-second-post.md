@@ -2,7 +2,8 @@
 layout: post
 title: "[Consistency] 보상프로세스로 정합성을 보장시키는 법"
 date: 2026-08-09 23:00:00 +0900
-categories : [Consistency]
+categories :
+  - architecture
 description : Consistency에 대해 알아보자
 ---
 
