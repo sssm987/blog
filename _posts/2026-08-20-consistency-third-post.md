@@ -103,9 +103,8 @@ api호출 실패시 재시도를 통해 정합성을 맞출수있는 가능성�
 간단하게 주문 생성 스웨거를 통해 주문 1건을 생성하고 PG서버에 값이 잘 오는지 데이터가 잘 쌓이는지를 실험하겠다.   
 결과는 모두 문제없이 데이터가 쌓여고 각 서버간의 정합성도 모두 맞는다.   
 <img src="{{ '/assets/images/concurrency/0820/configuration_swagger_test.png' | relative_url }}" alt="configuration_swagger_test" />
-<img src="{{ '/assets/images/concurrency/0820/configuration_order_test.png' | relative_url }}" alt="configuration_order_test" />
+<img src="{{ '/assets/images/concurrency/0820/configuration_order_db_test.png' | relative_url }}" alt="configuration_order_test" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_pg_test.png' | relative_url }}" alt="configuration_pg_test" />
-<img src="{{ '/assets/images/concurrency/0820/configuration_db_test.png' | relative_url }}" alt="configuration_db_test" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_inventory_db_test.png' | relative_url }}" alt="configuration_inventory_db_test" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_retry_db_test.png' | relative_url }}" alt="configuration_retry_db_test" />
 
@@ -117,7 +116,7 @@ api 호출로직에 의도적으로 익셉션을 발생시켜 pg서버 호출이
 <img src="{{ '/assets/images/concurrency/0820/configuration_order_test2.png' | relative_url }}" alt="configuration_order_test2" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_order_retry_test2.png' | relative_url }}" alt="configuration_order_retry_test2" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_inventory_db_test2.png' | relative_url }}" alt="configuration_inventory_db_test2" />
-<img src="{{ '/assets/images/concurrency/0820/configuration_payment_db_test2.png' | relative_url }}" alt="configuration_payment_db_test2" />
+<img src="{{ '/assets/images/concurrency/0820/configuration_pg_db_test2.png' | relative_url }}" alt="configuration_pg_db_test2" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_retry_db_test2.png' | relative_url }}" alt="configuration_retry_db_test2" />
 
 
