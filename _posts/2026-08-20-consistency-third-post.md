@@ -116,7 +116,7 @@ api 호출로직에 의도적으로 익셉션을 발생시켜 pg서버 호출이
 <img src="{{ '/assets/images/concurrency/0820/configuration_order_test2.png' | relative_url }}" alt="configuration_order_test2" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_order_retry_test2.png' | relative_url }}" alt="configuration_order_retry_test2" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_inventory_db_test2.png' | relative_url }}" alt="configuration_inventory_db_test2" />
-<img src="{{ '/assets/images/concurrency/0820/configuration_pg_db_test2.png' | relative_url }}" alt="configuration_pg_db_test2" />
+<img src="{{ '/assets/images/concurrency/0820/configuration_pg_test2.png' | relative_url }}" alt="configuration_pg_test2" />
 <img src="{{ '/assets/images/concurrency/0820/configuration_retry_db_test2.png' | relative_url }}" alt="configuration_retry_db_test2" />
 
 
