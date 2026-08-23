@@ -22,10 +22,10 @@ series_order: 4
 
 시스템 구성은 주문서버와 결제서버와 API통신을 하는 방식으로 했고 결제서버는 Mock서버로 응답값만 넘어오도록 구성했다.    
 DB는 주문서버에만 연동하였다.
-<img src="{{ '/assets/images/concurrency/0820/configuration_diagram.png' | relative_url }}" alt="ConfigurationDiagram" />
+<img src="{{ '/assets/images/concurrency/0823/configuration_diagram.png' | relative_url }}" alt="ConfigurationDiagram" />
 
 DB테이블은 재시도/이력과 동일한 구조로 사용하였다.   
-<img src="{{ '/assets/images/concurrency/0820/erd.png' | relative_url }}" alt="erd" />
+<img src="{{ '/assets/images/concurrency/0823/erd.png' | relative_url }}" alt="erd" />
 
 ## 실험 환경
 실험 환경은 Spring boot,k6,PostgreSQL이며 모두 맥북에 도커를 이용하여 띄워 테스트 할 것 이다.
@@ -44,7 +44,7 @@ DB테이블은 재시도/이력과 동일한 구조로 사용하였다.
 
 실제 시스템에서는 최종 실패한 승인 요청을 그대로 방치하면 주문은 대기 상태로 남고 재고도 차감된 상태가 유지될 수 있다.   
 따라서 PG 승인 여부를 조회한 뒤, 승인이 이루어지지 않았다면 주문을 취소하고 재고를 원복하는 별도의 복구 프로세스가 필요하다.
-<img src="{{ '/assets/images/concurrency/0820/configuration_diagram2.png' | relative_url }}" alt="ConfigurationDiagram2" />
+<img src="{{ '/assets/images/concurrency/0823/configuration_diagram2.png' | relative_url }}" alt="ConfigurationDiagram2" />
 
 ```java
 public void createOrder(OrderCreateCmd cmd) {
