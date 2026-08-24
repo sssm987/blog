@@ -29,7 +29,7 @@ DB테이블은 최대한 간단하게 구성하였으며 실제 주문, 결제 D
 
 
 ## 실험 환경
-실험 환경은 Spring boot,k6,PostgreSQL이며 모두 맥북에 도커를 이용하여 띄워 테스트 할 것 이다.
+실험 환경은 Spring boot,PostgreSQL이며 모두 맥북에 도커를 이용하여 띄워 테스트 할 것 이다.
 
 실험에서 사용한 전체 코드는
 <a href="https://github.com/sssm987/payment/tree/compensation" target="_blank" rel="noopener noreferrer">[여기에서 확인할 수 있다(주문 서버)]</a>

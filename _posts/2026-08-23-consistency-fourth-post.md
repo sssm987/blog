@@ -28,7 +28,7 @@ DB테이블은 재시도/이력과 동일한 구조로 사용하였다.
 <img src="{{ '/assets/images/concurrency/0823/erd.png' | relative_url }}" alt="erd" />
 
 ## 실험 환경
-실험 환경은 Spring boot,k6,PostgreSQL이며 모두 맥북에 도커를 이용하여 띄워 테스트 할 것 이다.
+실험 환경은 Spring boot,RabbitMQ,PostgreSQL이며 모두 맥북에 도커를 이용하여 띄워 테스트 할 것 이다.
 
 실험에서 사용한 전체 코드는
 <a href="https://github.com/sssm987/payment/tree/rabbitmq-payment" target="_blank" rel="noopener noreferrer">[여기에서 확인할 수 있다(주문 서버)]</a>
